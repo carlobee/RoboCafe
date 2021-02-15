@@ -1,0 +1,47 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - complete
+
+responses:
+  utter_greet:
+  - text: "Hey"
+
+  utter_offer_assistance:
+  - text: "I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?"
+
+  utter_water_tank_level:
+  - text: "Please make sure the water tank is filled above the line. Tell me done when you are finished."
+
+  utter_dispense_coffee:
+  - text: "OK please wait while I dispense the coffee. Be sure to release the handle again for the next person."
+
+
+
+
+  # utter_cheer_up:
+  # - text: "Here is something to cheer you up:"
+  #   image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  # utter_iamabot:
+  # - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
