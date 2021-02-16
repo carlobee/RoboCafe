@@ -120,5 +120,9 @@ nlu:
     - i want a [small](size) coffee
     - i want a [big](size) coffee
     - i want a [little](size) coffee
-
-
+    - [long](size)
+    - [short](size)
+    - [large](size)
+    - [small](size)
+    - [big](size)
+    - [little](size)

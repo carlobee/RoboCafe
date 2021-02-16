@@ -41,24 +41,28 @@ stories:
   - intent: goodbye #done
   - action: utter_goodbye # done
 
-# - story: non-experienced user
-#   steps:
-#     - intent: greet # done
-#     - action: utter_greet
-#     - action: offer_assistance
-#     - intent: new_user # done
-#     - action: water_tank_level
-#     - intent: complete # done
-#     - action: choose_capsule
-#     - intent: complete # done
-#     - action: insert_capsule
-#     - intent: complete # done
-#     - action: handle_down
-#     - intent: complete # done
-#     - action: affirm_cup
-#     - intent: affirm # done
-#     - action: get_coffee_size
-#     - intent: coffee_size
-#     - action: dispense_coffee
-#     - intent: goodbye # done
-#     - action: utter_goodbye # done
+- story: non-experienced user
+  steps:
+    - intent: greet # done
+    - action: utter_greet
+    - action: utter_offer_assistance
+    - intent: affirm # done
+    - action: utter_new_user_help
+    - action: utter_water_tank_level
+    - intent: complete # done
+    - action: utter_choose_capsule
+    - intent: complete # done
+    - action: utter_insert_capsule
+    - intent: complete # done
+    - action: utter_handle_down
+    - intent: complete # done
+    - action: utter_affirm_cup
+    - intent: complete # done
+    - action: utter_get_coffee_size
+    - intent: coffee_size
+      entities:
+        - size: large
+        - size: small
+    - action: utter_dispense_coffee
+    - intent: goodbye # done
+    - action: utter_goodbye # done
