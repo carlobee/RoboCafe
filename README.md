@@ -25,7 +25,7 @@ This requires [ngrok](https://ngrok.com/), which creates a unique URL that can b
 
 Once you have downloaded ngrok navigate to the folder in your prompt/terminal and run the command `ngrok http 5005`
 
-The window should display a forwarding URL (e.g.  https://6e28a3215a9d.ngrok.io -> http://localhost:5005), copy the first address (https://6e28a3215a9d.ngrok.io) to the field `webhook_url: "https://<your ngrok url>/webhooks/telegram/webhook"` in the credientials.yml changing only the first part before `/webhooks/telegram/webhook` 
+The window should display a forwarding URL (e.g.  https://6e28a3215a9d.ngrok.io -> http://localhost:5005), copy the first address (https://6e28a3215a9d.ngrok.io) to the field `webhook_url: "https://<your-ngrok-url>/webhooks/telegram/webhook"` in the credientials.yml changing only the first part before `/webhooks/telegram/webhook` 
 
 Open a new terminal/prompt window or tab and use the command `rasa run` to run the bot
 
