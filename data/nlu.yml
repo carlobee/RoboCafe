@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,7 @@ nlu:
     - of course
     - that sounds good
     - correct
-
+    - yes please
 - intent: deny
   examples: |
     - no
@@ -49,61 +46,16 @@ nlu:
     - don't like that
     - no way
     - not really
-
-# - intent: mood_great
-#   examples: |
-#     - perfect
-#     - great
-#     - amazing
-#     - feeling like a king
-#     - wonderful
-#     - I am feeling very good
-#     - I am great
-#     - I am amazing
-#     - I am going to save the world
-#     - super stoked
-#     - extremely good
-#     - so so perfect
-#     - so good
-#     - so perfect
-
-# - intent: mood_unhappy
-#   examples: |
-#     - my day was horrible
-#     - I am sad
-#     - I don't feel very well
-#     - I am disappointed
-#     - super sad
-#     - I'm so sad
-#     - sad
-#     - very sad
-#     - unhappy
-#     - not good
-#     - not very good
-#     - extremly sad
-#     - so saad
-#     - so sad
-
-# added by us
-
-- intent: new_user
-  examples: |
-    - yes this is my first time
-    - I am a first time user
-    - I am new to this
-    - I have never used this
-    - first time
-    - new user
-    - never used this
-
+    - no thank you
 - intent: confused
   examples: |
     - confused
     - I am stuck
+    - I'm stuck
     - I am lost
     - I need help
     - help
-
+    - I don't know what to do
 - intent: complete
   examples: |
     - complete
@@ -111,7 +63,7 @@ nlu:
     - ready
     - OK
     - all good
-
+    - i am done
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee

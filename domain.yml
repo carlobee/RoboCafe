@@ -1,60 +1,62 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - complete
-  - new_user
-  - coffee_size
-
-entities:
-  - size
-
-responses:
-  utter_greet:
-  - text: "Hello."
-
-  utter_offer_assistance:
-  - text: "I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?"
-
-  utter_new_user_help:
-  - text: "Even though I may look very high tech there are a few things that I need your help with before I can make you a coffee. I will walk through each one of these steps, after you have preformed one of these tasks tell me 'done' so that I know you are finished. The first thing that needs to be done is to check the water level."
-
-  utter_water_tank_level:
-  - text: "Please make sure the water tank is filled above the line. Tell me done when you are finished."
-
-  utter_dispense_coffee:
-  - text: "OK please wait while I dispense the coffee. Be sure to release the handle again for the next person."
-
-  utter_choose_capsule:
-  - text: "This machine uses capsules, each capsule will create a different flavour of coffee. They come in different flavours and intensities. Please select a capsule and tell me done when you are finished."
-
-  utter_insert_capsule:
-  - text: "You will need to place the capsule inside the machine. Firstly make sure the handle is lifted and the hole on top of the machine is exposed. The capsule then should be placed inside the hole. Please tell me done with you are finished."
-
-  utter_handle_down:
-  - text: "Make sure that after the capsule is in the machine that you put the handle down. This may take a little bit of force as it is piercing the sealed coffee capsule. Once the handle is fully down tell me done."
-
-  utter_affirm_cup:
-  - text: "Please make sure that you have place a cup under the spout. Tell me done when you are finished."
-
-  utter_get_coffee_size:
-  - text: "There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like."
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- complete:
+    use_entities: true
+- new_user:
+    use_entities: true
+- coffee_size:
+    use_entities: true
+- confused:
+    use_entities: true
+entities:
+- size
+slots: {}
+responses:
+  utter_greet:
+  - text: Hello.
+  utter_offer_assistance:
+  - text: I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?
+  utter_new_user_help:
+  - text: Even though I may look very high tech there are a few things that I need your help with before I can make you a coffee. I will walk through each one of these steps, after you have preformed one of these tasks tell me 'done' so that I know you are finished. The first thing that needs to be done is to check the water level.
+  utter_water_tank_level:
+  - text: Please make sure the water tank is filled above the line. Tell me done when you are finished.
+  utter_dispense_coffee:
+  - text: OK please wait while I dispense the coffee. Be sure to release the handle again for the next person.
+  utter_choose_capsule:
+  - text: This machine uses capsules, each capsule will create a different flavour of coffee. They come in different flavours and intensities. Please select a capsule and tell me done when you are finished.
+  utter_insert_capsule:
+  - text: You will need to place the capsule inside the machine. Firstly make sure the handle is lifted and the hole on top of the machine is exposed. The capsule then should be placed inside the hole. Please tell me done with you are finished.
+  utter_handle_down:
+  - text: Make sure that after the capsule is in the machine that you put the handle down. This may take a little bit of force as it is piercing the sealed coffee capsule. Once the handle is fully down tell me done.
+  utter_affirm_cup:
+  - text: Please make sure that you have place a cup under the spout. Tell me done when you are finished.
+  utter_get_coffee_size:
+  - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+actions: []
+forms: {}
+e2e_actions: []
