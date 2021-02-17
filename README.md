@@ -3,7 +3,7 @@ This repo contains the Rasa bot used in the RoboCafe project for the F21CA modul
 =======
 ## Rasa X Installation
 In order to run the Rasa bot we encourage you to use the Alana [Anaconda](https://www.anaconda.com/) environment found in this repo.   
-You can do this by running the alana_installation.sh in the Anaconda prompt (on Windows) or terminal (MacOS / Unix) or by using the terminal in pycharm.Once created activate it with conda activate Alana, you will see (Alana) at the left of your prompt.
+You can do this by running the alana_installation.sh in the Anaconda prompt (on Windows) or terminal (MacOS / Unix) or by using the terminal in pycharm. Once created activate it with conda activate Alana, you will see (Alana) at the left of your prompt.
 
 Install Rasa X with the command 
 ```bash
