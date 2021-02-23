@@ -38,6 +38,12 @@ pipeline:
   #   max_ngram: 2
   # - name: DIETClassifier
   #   epochs: 1
+
+- name: "MitieIntentClassifier"
+
+  # other components
+- name: FallbackClassifier
+  threshold: 0.7
     
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
