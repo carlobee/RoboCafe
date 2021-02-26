@@ -16,3 +16,10 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_out_of_scope
+
+- rule: first_time_customer
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: first_time_form
+    - active_loop: first_time_form
