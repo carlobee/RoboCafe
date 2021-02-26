@@ -27,6 +27,8 @@ intents:
     use_entities: true
 - confused:
     use_entities: true
+- nlu_fallback:
+    use_entities: true
 entities:
 - size
 slots: {}
@@ -57,6 +59,8 @@ responses:
   - text: Great, carry on!
   utter_goodbye:
   - text: Bye
+  utter_out_of_scope:
+  - text: Sorry, I don't understand what you said
 actions: []
 forms: {}
 e2e_actions: []
