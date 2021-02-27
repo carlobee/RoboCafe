@@ -44,13 +44,7 @@ slots:
   water_tank:
     type: bool
     influence_conversation: true
-  choose_capsule:
-    type: bool
-    influence_conversation: true
   insert_capsule:
-    type: bool
-    influence_conversation: true
-  handle_down:
     type: bool
     influence_conversation: true
   cup:
@@ -67,8 +61,6 @@ responses:
   - text: Hello.
   utter_offer_assistance:
   - text: I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?
-  utter_new_user_help:
-  - text: Even though I may look very high tech there are a few things that I need your help with before I can make you a coffee. I will walk through each one of these steps, after you have preformed one of these tasks tell me 'done' so that I know you are finished. The first thing that needs to be done is to check the water level.
 #  utter_water_tank_level:
 #  - text: Please make sure the water tank is filled above the line. Tell me done when you are finished.
   utter_dispense_coffee:
@@ -93,20 +85,19 @@ responses:
   - text: Sorry, I don't understand what you said
   utter_ask_water_tank:
     - text: Is the water tank level above the line?
-  utter_choose_capsule:
-    - text: This machine uses capsules, each capsule will create a different flavour of coffee. They come in different flavours and intensities. Please select a capsule and tell me done when you are finished.
-  utter_insert_capsule:
-    - text: You will need to place the capsule inside the machine. Firstly make sure the handle is lifted and the hole on top of the machine is exposed. The capsule then should be placed inside the hole. Please
-  utter_handle_down:
-    - text: Make sure that after the capsule is in the machine that you put the handle down. This may take a little bit of force as it is piercing the sealed coffee capsule. Once the handle is fully down tell m
-  utter_cup:
-    - text: Please make sure that you have place a cup under the spout. Tell me done when you are finished.
-  utter_size:
+  utter_ask_insert_capsule:
+    - text: Place your capsule in the top of the machine and pull the handle down.
+  utter_ask_cup:
+    - text: Please make sure that you have place a cup under the spout.
+  utter_ask_size:
     - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
+
 #########################################
 # actions
 #########################################
-actions: []
+actions:
+- utter_greet
+- utter_dispense_coffee
 #########################################
 # forms
 #########################################
@@ -116,29 +107,20 @@ forms:
     - intent: affirm
       type: from_intent
       value: true
-    - intent: deny
+    - intent: deny ## TO DO - handle this and empty long short entity
       type: from_intent
       value: false
-    choose_capsule:
-    - intent: affirm
-      type: from_intent
-      value: true
     insert_capsule:
-    - intent: affirm
-      type: from_intent
-      value: true
-    handle_down:
-    - intent: affirm
+    - intent: complete
       type: from_intent
       value: true
     cup:
-    - intent: affirm
+    - intent: complete
       type: from_intent
       value: true
     size:
-    - intent: affirm
-      type: from_intent
-      value: true
+    - entity: size
+      type: from_entity 
 #    - intent:
 #      - inform
 #      - cc_payment_form
@@ -147,3 +129,13 @@ forms:
 # e2e action
 #########################################
 e2e_actions: []
+
+
+# to do
+#
+# 1. fix no option with water tank - just add new action
+# 2. .py file clear slots AND entites for long and short upon new person using machine
+# 3. create new form for experienced user
+# 4. create new manager form for story selction
+# 5. detect divergence?? (alana should do this for chit chat bot, else - just ask question again (we do this already))
+# 6. TRAIN!!!!!

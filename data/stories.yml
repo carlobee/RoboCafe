@@ -74,6 +74,6 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
-    - action: water_form
+    - action: first_time_form
     - slot{"water_tank": True}
-    - active_loop: water_form
+    - active_loop: first_time_form

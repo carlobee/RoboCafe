@@ -67,6 +67,8 @@ nlu:
     - i am done
     - finished
     - I am done yes
+    - what is next
+    - next
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee
