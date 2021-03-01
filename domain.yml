@@ -47,16 +47,17 @@ slots:
 # responses
 #########################################
 responses:
+
   utter_greet:
   - text: Hello.
-  utter_offer_assistance:
-  - text: I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_happy:
-  - text: Great, carry on!
+  utter_introduction:
+  - text: I am Furhat. I can provide assistance in making a coffee.
+
   utter_goodbye:
   - text: Bye
+  - text: Bye Bye
+  - text: Goodbye
+
   utter_out_of_scope:
   - text: Sorry, I don't understand what you said
 
@@ -71,10 +72,13 @@ responses:
 
   utter_ask_insert_capsule:
   - text: Place your capsule in the top of the machine and pull the handle down.
+
   utter_ask_cup:
   - text: Please make sure that you have place a cup under the spout.
+
   utter_ask_size:
     - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
+
   utter_dispense_coffee:
   - text: OK please wait while I dispense your {size} coffee. Be sure to release the handle again for the next person.
 
@@ -160,9 +164,9 @@ e2e_actions: []
 
 # to do
 #
-# 1. fix no option with water tank - just add new action
-# 2. --- DONE --- .py file clear slots AND entites for long and short upon new person using machine
-# 3. create new form for experienced user
-# 4. create new manager form for story selction
+# 1. --- DONE --- fix no option with water tank - just add new action
+# 2. --- DONE --- .py file clear slots AND entities for long and short upon new person using machine
+# 3. --- DONE --- create new form for experienced user
+# 4. --- DONE --- create new manager form for story selection
 # 5. detect divergence?? (alana should do this for chit chat bot, else - just ask question again (we do this already))
 # 6. TRAIN!!!!!
