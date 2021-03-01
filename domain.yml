@@ -1,6 +1,4 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -8,33 +6,18 @@ session_config:
 # intents
 #########################################
 intents:
-- greet:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- complete:
-    use_entities: true
-- new_user:
-    use_entities: true
-- coffee_size:
-    use_entities: true
-- confused:
-    use_entities: true
-- nlu_fallback:
-    use_entities: true
-#########################################
-# entities
-#########################################
+- goodbye
+- coffee_size
+- greet
+- affirm
+- complete
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- new_user
+- confused
+- nlu_fallback
 entities:
 - size
 #########################################
@@ -84,11 +67,11 @@ responses:
   utter_out_of_scope:
   - text: Sorry, I don't understand what you said
   utter_ask_water_tank:
-    - text: Is the water tank level above the line?
+  - text: Is the water tank level above the line?
   utter_ask_insert_capsule:
-    - text: Place your capsule in the top of the machine and pull the handle down.
+  - text: Place your capsule in the top of the machine and pull the handle down.
   utter_ask_cup:
-    - text: Please make sure that you have place a cup under the spout.
+  - text: Please make sure that you have place a cup under the spout.
   utter_ask_size:
     - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
 
@@ -96,26 +79,30 @@ responses:
 # actions
 #########################################
 actions:
-- utter_greet
+- action_reset_slots
 - utter_dispense_coffee
-#########################################
-# forms
-#########################################
+- utter_greet
 forms:
   first_time_form:
     water_tank:
     - intent: affirm
       type: from_intent
       value: true
-    - intent: deny ## TO DO - handle this and empty long short entity
+    - intent: deny
       type: from_intent
       value: false
     insert_capsule:
     - intent: complete
       type: from_intent
       value: true
+    - intent: affirm
+      type: from_intent
+      value: true
     cup:
     - intent: complete
+      type: from_intent
+      value: true
+    - intent: affirm
       type: from_intent
       value: true
     size:
@@ -134,7 +121,7 @@ e2e_actions: []
 # to do
 #
 # 1. fix no option with water tank - just add new action
-# 2. .py file clear slots AND entites for long and short upon new person using machine
+# 2. --- DONE --- .py file clear slots AND entites for long and short upon new person using machine
 # 3. create new form for experienced user
 # 4. create new manager form for story selction
 # 5. detect divergence?? (alana should do this for chit chat bot, else - just ask question again (we do this already))

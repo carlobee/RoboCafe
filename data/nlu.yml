@@ -38,6 +38,8 @@ nlu:
     - correct
     - yes please
     - definitely
+    - yup
+    - aye
 - intent: deny
   examples: |
     - no
@@ -69,6 +71,7 @@ nlu:
     - I am done yes
     - what is next
     - next
+    - okay
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee
@@ -83,6 +86,7 @@ nlu:
     - [small](size)
     - [big](size)
     - [little](size)
+    - [long](size)
 - intent: nlu_fallback
   examples: |
     - oljksha
