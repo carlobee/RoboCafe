@@ -1,6 +1,6 @@
 # F21CA: RoboCafe (Group 3)
-
-**This repo contains the Rasa bot used in the RoboCafe project for the F21CA module.**
+=======
+This repo contains the Rasa bot used in the RoboCafe project for the F21CA module.
 
 ## Rasa and Rasa X Installation
 In order to run the Rasa bot we encourage you to use the Alana [Anaconda](https://www.anaconda.com/) environment found in this repo.   
@@ -63,6 +63,7 @@ Open a new terminal/prompt window or tab and use the command `rasa run` to run t
 Now open your [Telegram](https://web.telegram.org/) app and add the user @robot_cafe_bot to start chatting!
 
 ## Development
+
 **When pushing changes don't push to main branch. Create your own branch or push to the branch for your team (e.g. 
 RASA).**
 
