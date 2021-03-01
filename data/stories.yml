@@ -29,40 +29,83 @@ stories:
 #   - intent: deny
 #   - action: utter_goodbye
 
-- story: experienced user
-  steps:
-  - intent: greet # done
-  - action: utter_greet
-  - action: utter_offer_assistance
-  - intent: deny # done
-  - action: utter_water_tank_level
-  - intent: complete # done
-  - action: utter_dispense_coffee
-  - intent: goodbye #done
-  - action: utter_goodbye # done
+#- story: experienced user
+#  steps:
+#  - intent: greet # done
+#  - action: utter_greet
+#  - action: utter_offer_assistance
+#  - intent: deny # done
+#  - action: utter_water_tank_level
+#  - intent: complete # done
+#  - action: utter_dispense_coffee
+#  - intent: goodbye #done
+#  - action: utter_goodbye # done
+#
+#- story: non-experienced user
+#  steps:
+#    - intent: greet # done
+#    - action: utter_greet
+#    - action: utter_offer_assistance
+#    - intent: affirm # done
+#    - action: utter_new_user_help
+#    - action: utter_water_tank_level
+#    - intent: complete # done
+#    - action: utter_choose_capsule
+#    - intent: complete # done
+#    - action: utter_insert_capsule
+#    - intent: complete # done
+#    - action: utter_handle_down
+#    - intent: complete # done
+#    - action: utter_affirm_cup
+#    - intent: complete # done
+#    - action: utter_get_coffee_size
+#    - intent: coffee_size
+#      entities:
+#        - size: large
+#        - size: small
+#    - action: utter_dispense_coffee
+#    - intent: goodbye # done
+#    - action: utter_goodbye # done
 
-- story: non-experienced user
+#####################################
+# Form testing story
+#####################################
+- story: first time user
   steps:
-    - intent: greet # done
+    - intent: greet
     - action: utter_greet
-    - action: utter_offer_assistance
-    - intent: affirm # done
-    - action: utter_new_user_help
-    - action: utter_water_tank_level
-    - intent: complete # done
-    - action: utter_choose_capsule
-    - intent: complete # done
-    - action: utter_insert_capsule
-    - intent: complete # done
-    - action: utter_handle_down
-    - intent: complete # done
-    - action: utter_affirm_cup
-    - intent: complete # done
-    - action: utter_get_coffee_size
-    - intent: coffee_size
-      entities:
-        - size: large
-        - size: small
-    - action: utter_dispense_coffee
-    - intent: goodbye # done
-    - action: utter_goodbye # done
+    - action: first_time_form
+#    - slot{"water_tank": True}
+    - active_loop: first_time_form
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: first_time_form
+  - active_loop: first_time_form
+  - slot_was_set:
+    - requested_slot: water_tank
+  - slot_was_set:
+    - water_tank: true
+  - slot_was_set:
+    - requested_slot: insert_capsule
+  - slot_was_set:
+    - insert_capsule: true
+  - slot_was_set:
+    - requested_slot: cup
+  - slot_was_set:
+    - cup: true
+  - slot_was_set:
+    - requested_slot: size
+  - slot_was_set:
+    - size: long
+  - slot_was_set:
+    - size: long
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_dispense_coffee
+  - action: action_reset_slots
+  - intent: goodbye
+  - action: utter_goodbye

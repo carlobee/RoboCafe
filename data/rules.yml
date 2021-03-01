@@ -11,3 +11,26 @@ rules:
 #   steps:
 #   - intent: bot_challenge
 #   - action: utter_iamabot
+
+- rule: out-of-scope
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+- rule: first_time_customer
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: first_time_form
+    - active_loop: first_time_form
+
+- rule: Submit form
+  condition:
+  - active_loop: first_time_form
+  steps:
+  - action: first_time_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_dispense_coffee
+  - action: action_reset_slots
