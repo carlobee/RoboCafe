@@ -70,42 +70,66 @@ stories:
 #####################################
 # Form testing story
 #####################################
-- story: first time user
+
+- story: water_ok_experienced_user
   steps:
     - intent: greet
     - action: utter_greet
-    - action: first_time_form
-#    - slot{"water_tank": True}
+    - action: water_tank_form
     - active_loop: first_time_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - action: action_reset_slots
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: first_time_form
-  - active_loop: first_time_form
-  - slot_was_set:
-    - requested_slot: water_tank
-  - slot_was_set:
-    - water_tank: true
-  - slot_was_set:
-    - requested_slot: insert_capsule
-  - slot_was_set:
-    - insert_capsule: true
-  - slot_was_set:
-    - requested_slot: cup
-  - slot_was_set:
-    - cup: true
-  - slot_was_set:
-    - requested_slot: size
-  - slot_was_set:
-    - size: long
-  - slot_was_set:
-    - size: long
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_dispense_coffee
-  - action: action_reset_slots
-  - intent: goodbye
-  - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: first_time_form
+#   - active_loop: first_time_form
+#   - slot_was_set:
+#     - requested_slot: water_tank
+#   - slot_was_set:
+#     - water_tank: true
+#   - slot_was_set:
+#     - requested_slot: insert_capsule
+#   - slot_was_set:
+#     - insert_capsule: true
+#   - slot_was_set:
+#     - requested_slot: cup
+#   - slot_was_set:
+#     - cup: true
+#   - slot_was_set:
+#     - requested_slot: size
+#   - slot_was_set:
+#     - size: long
+#   - slot_was_set:
+#     - size: long
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_dispense_coffee
+#   - action: action_reset_slots
+#   - intent: goodbye
+#   - action: utter_goodbye
