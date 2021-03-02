@@ -28,6 +28,15 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - okay thanks bye
+    - ok thank you bye
+    - thank you bye bye
+    - thanks bye
+    - thank you goodbye
+    - thanks goodbye
+    - thanks
+    - great thanks
+    - thank you
 - intent: affirm
   examples: |
     - yes
@@ -87,8 +96,3 @@ nlu:
     - [big](size)
     - [little](size)
     - [long](size)
-- intent: nlu_fallback
-  examples: |
-    - oljksha
-    - ffff
-    - dasgfsdfg
