@@ -146,6 +146,9 @@ forms:
     - entity: size
       type: from_entity
 
+
+# custom actions to pre fill slots (e.g. "I want a large coffee")
+
 #---------------- Experienced user path -------------------#
 
   experienced_user_form:
