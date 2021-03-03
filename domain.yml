@@ -2,6 +2,7 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 #########################################
 # intents
 #########################################
@@ -40,14 +41,18 @@ slots:
 # responses
 #########################################
 responses:
-  utter_greet:
-  - text: Hello.
+  # utter_greet:
+  # - text: Hello.
   utter_offer_assistance:
   - text: I am Furhat. I can provide assistance in making a coffee. Is this your first time using this coffee machine?
 #  utter_water_tank_level:
 #  - text: Please make sure the water tank is filled above the line. Tell me done when you are finished.
   utter_dispense_coffee:
   - text: OK please wait while I dispense the coffee. Be sure to release the handle again for the next person.
+  utter_greet:
+    - text: Hi! I'm the default greeting.
+    - text: Hi! I'm the custom channel greeting
+      channel: myio
 #  utter_choose_capsule:
 #  - text: This machine uses capsules, each capsule will create a different flavour of coffee. They come in different flavours and intensities. Please select a capsule and tell me done when you are finished.
 #  utter_insert_capsule:
@@ -107,7 +112,7 @@ forms:
       value: true
     size:
     - entity: size
-      type: from_entity 
+      type: from_entity
 #    - intent:
 #      - inform
 #      - cc_payment_form
