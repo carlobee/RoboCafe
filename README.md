@@ -64,7 +64,7 @@ Now open your [Telegram](https://web.telegram.org/) app and add the user @robot_
 
 ## Development
 
-**When pushing changes don't push to main branch. Create your own branch or push to the branch for your team (e.g. 
+**When pushing changes don't push to main branch. Create your own branch or push to the branch for your team (e.g.
 RASA).**
 
 **Pull requests will be reviewed by the whole team before merging with the master branch**

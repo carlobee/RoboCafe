@@ -1,0 +1,27 @@
+08:06:40 [Skill] INFO  Skill:139 - Connecting to Furhat server on 100.88.20.52:1932
+08:06:43 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+08:06:45 [SkillSkill] ERROR InitRunner: 28 - java.lang.NullPointerException
+08:06:45 [ErrorLoggingThread] ERROR SkillSkill:459 - java.lang.NullPointerException
+	at furhatos.skills.FurhatSpeech.getVoices(FurhatSpeech.java:294)
+	at furhatos.skills.FurhatEventWrapper.getVoices(FurhatEventWrapper.java:31)
+	at furhatos.skills.FurhatSpeech.getVoice(FurhatSpeech.java:303)
+	at furhatos.skills.FurhatEventWrapper.getVoice(FurhatEventWrapper.java:31)
+	at furhatos.skills.FurhatSpeech.setVoiceAndInputLanguage(FurhatSpeech.java:283)
+	at furhatos.skills.FurhatEventWrapper.setVoiceAndInputLanguage(FurhatEventWrapper.java:31)
+	at furhatos.flow.kotlin.Furhat.setVoice(Furhat.kt:707)
+	at furhatos.flow.kotlin.Furhat.internalSetVoice(Furhat.kt:728)
+	at furhatos.flow.kotlin.Furhat.setVoice(Furhat.kt:743)
+	at furhatos.flow.kotlin.Furhat.setVoice$default(Furhat.kt:741)
+	at furhatos.app.skill.flow.GeneralKt$Idle$1$1.invoke(general.kt:9)
+	at furhatos.app.skill.flow.GeneralKt$Idle$1$1.invoke(general.kt)
+	at furhatos.flow.kotlin.InitRunner.run(InitRunner.kt:25)
+	at furhatos.flow.kotlin.StateRunner.runInitTrigger(StateRunner.kt:215)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:64)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.skill.SkillSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+08:06:50 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 4430 ms since last event poll

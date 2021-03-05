@@ -2,6 +2,7 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 #########################################
 # intents
 #########################################
@@ -146,7 +147,6 @@ forms:
     - entity: size
       type: from_entity
 
-
 # custom actions to pre fill slots (e.g. "I want a large coffee")
 
 #---------------- Experienced user path -------------------#
@@ -155,8 +155,6 @@ forms:
     size:
     - entity: size
       type: from_entity 
-
-
 
 
 #########################################
