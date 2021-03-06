@@ -12,15 +12,15 @@ from rasa.core.channels.channel import (
     UserMessage,
 )
 
+
 class MyIO(InputChannel):
-    def name(a) -> Text:
+    def name() -> Text:
         """Name of your custom channel."""
         return "myio"
 
     def blueprint(
-        self, on_new_message: Callable[[UserMessage], Awaitable[None]]
+            self, on_new_message: Callable[[UserMessage], Awaitable[None]]
     ) -> Blueprint:
-
         custom_webhook = Blueprint(
             "custom_webhook_{}".format(type(self).__name__),
             inspect.getmodule(self).__name__,
@@ -32,10 +32,10 @@ class MyIO(InputChannel):
 
         @custom_webhook.route("/webhook", methods=["POST"])
         async def receive(request: Request) -> HTTPResponse:
-            sender_id = request.json.get("sender") # method to get sender_id
-            text = request.json.get("message") # method to fetch text
-            input_channel = self.name() # method to fetch input channel
-            metadata = self.get_metadata(request) # method to get metadata
+            sender_id = request.json.get("sender")  # method to get sender_id
+            text = request.json.get("text")  # method to fetch text
+            input_channel = self.name()  # method to fetch input channel
+            metadata = self.get_metadata(request)  # method to get metadata
 
             collector = CollectingOutputChannel()
 
