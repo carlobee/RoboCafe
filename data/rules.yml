@@ -2,10 +2,10 @@ version: "2.0"
 
 rules:
 
-#- rule: Say goodbye anytime the user says goodbye
+#- rule: Say hi anytime the user says hi
 #  steps:
-#  - intent: goodbye
-#  - action: utter_goodbye
+#  - intent: greet
+#  - action: utter_greet
 
 - rule: out-of-scope
   steps:
