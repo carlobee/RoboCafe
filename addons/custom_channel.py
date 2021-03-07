@@ -12,6 +12,7 @@ from rasa.core.channels.channel import (
     UserMessage,
 )
 
+
 class MyIO(InputChannel):
     def name(a) -> Text:
         """Name of your custom channel."""
@@ -32,10 +33,10 @@ class MyIO(InputChannel):
 
         @custom_webhook.route("/webhook", methods=["POST"])
         async def receive(request: Request) -> HTTPResponse:
-            sender_id = request.json.get("sender") # method to get sender_id
-            text = request.json.get("message") # method to fetch text
-            input_channel = self.name() # method to fetch input channel
-            metadata = self.get_metadata(request) # method to get metadata
+            sender_id = request.json.get("sender")  # method to get sender_id
+            text = request.json.get("message")  # method to fetch text
+            input_channel = self.name()  # method to fetch input channel
+            metadata = self.get_metadata(request)  # method to get metadata
 
             collector = CollectingOutputChannel()
 
