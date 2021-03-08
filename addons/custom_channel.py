@@ -14,7 +14,7 @@ from rasa.core.channels.channel import (
 
 
 class MyIO(InputChannel):
-    def name() -> Text:
+    def name(a) -> Text:
         """Name of your custom channel."""
         return "myio"
 
@@ -33,11 +33,15 @@ class MyIO(InputChannel):
         @custom_webhook.route("/webhook", methods=["POST"])
         async def receive(request: Request) -> HTTPResponse:
             sender_id = request.json.get("sender")  # method to get sender_id
-            text = request.json.get("text")  # method to fetch text
+            # text = request.json.get("text")  # method to fetch text
             input_channel = self.name()  # method to fetch input channel
             metadata = self.get_metadata(request)  # method to get metadata
 
             collector = CollectingOutputChannel()
+
+            text = request.json.get("current_state.state.nlu.annotations.processed_text")
+            # text = request_data.get("current_state.state.nlu.annotations.processed_text")
+            # last_bot = request_data.get("current_state.state.last_bot")
 
             # include exception handling
 

@@ -1,0 +1,15 @@
+{
+            "session_id": "123",
+            "timestamp": "",
+            "user_id": "test",
+            "last_state": {},
+            "state": {
+                "last_bot": "123",
+                "nlu": {
+                  "annotations": {
+                   "processed_text": "Hi"
+                  }
+                },
+                "response": {"greetings": ""}
+            }
+}
