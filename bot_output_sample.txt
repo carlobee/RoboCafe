@@ -1,0 +1,11 @@
+What Rasa outputs:
+[{
+    "recipient_id": "me",
+    "text": "I am Furhat. I can provide assistance in making a coffee."
+}, {
+    "recipient_id": "me",
+    "text": "Is the water tank level above the line?"
+}]
+
+What Alana wants:
+{'result': 'Hello.', 'bot_name': 'greetings', 'bot_version': None, 'lock_requested': False, 'bot_params': {'time': '2021-03-08 11:34:12.441180'}, 'user_attributes': {}, 'tts_emotion': '', 'log_output': ''}

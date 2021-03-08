@@ -51,7 +51,7 @@ responses:
 
   utter_greet:
   - text: Hello.
-    channel: myio
+#    channel: myio
   utter_introduction:
   - text: I am Furhat. I can provide assistance in making a coffee.
 

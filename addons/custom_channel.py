@@ -34,12 +34,14 @@ class MyIO(InputChannel):
         async def receive(request: Request) -> HTTPResponse:
             sender_id = request.json.get("sender")  # method to get sender_id
             # text = request.json.get("text")  # method to fetch text
-            input_channel = self.name()  # method to fetch input channel
-            metadata = self.get_metadata(request)  # method to get metadata
+            # input_channel = self.name()  # method to fetch input channel
+            # input_channel = "myio"  # method to fetch input channel
+            # metadata = self.get_metadata(request)  # method to get metadata
 
             collector = CollectingOutputChannel()
 
             text = request.json.get("current_state.state.nlu.annotations.processed_text")
+            print(text)
             # text = request_data.get("current_state.state.nlu.annotations.processed_text")
             # last_bot = request_data.get("current_state.state.last_bot")
 
@@ -50,8 +52,8 @@ class MyIO(InputChannel):
                     text,
                     collector,
                     sender_id,
-                    input_channel=input_channel,
-                    metadata=metadata,
+                    # input_channel=input_channel,
+                    # metadata=metadata,
                 )
             )
 
