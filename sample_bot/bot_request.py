@@ -6,7 +6,7 @@ def send_message_to_rasa(user_id, message):
     # replace rasa_server with the ip or name of actual server
     message_url = 'http://localhost:5005/webhooks/rest/webhook'
     headers = {'Content-type': 'application/json'}
-    user_id = 'test'
+    user_id = 'me'
     message = 'hi'
     # user_id is the name of the conversation, message is the text to send to Rasa
     payload = '{"sender": "' + str(user_id) + '", "message": "' + message + '"}'
