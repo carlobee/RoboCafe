@@ -1,0 +1,28 @@
+11:44:12 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+11:44:12 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+11:44:37 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1529 ms since last event poll
+11:44:56 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1155 ms since last event poll
+11:45:27 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1489 ms since last event poll
+11:45:39 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1556 ms since last event poll
+11:45:45 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1328 ms since last event poll
+11:45:53 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1318 ms since last event poll
+11:46:00 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1406 ms since last event poll
+11:46:12 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3547 ms since last event poll
+11:46:24 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1246 ms since last event poll
+11:46:33 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1641 ms since last event poll
+11:46:45 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3869 ms since last event poll
+11:51:57 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3698 ms since last event poll
+11:52:10 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2370 ms since last event poll
+11:52:23 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1586 ms since last event poll
+11:52:41 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1565 ms since last event poll
+11:52:55 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1607 ms since last event poll
+11:53:18 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1577 ms since last event poll
+11:53:29 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1581 ms since last event poll
+11:53:36 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1342 ms since last event poll
+11:53:54 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1908 ms since last event poll
+11:54:06 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1685 ms since last event poll
+11:54:17 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1646 ms since last event poll
+11:54:24 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1652 ms since last event poll
+11:54:38 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3679 ms since last event poll
+11:54:50 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1744 ms since last event poll
+12:14:03 [Broker Client] ERROR BrokerClient:152 - Unexpected disconnect from broker

@@ -7,10 +7,10 @@ rules:
 #  - intent: greet
 #  - action: utter_greet
 
-- rule: out-of-scope
-  steps:
-  - intent: nlu_fallback
-  - action: utter_out_of_scope
+#- rule: out-of-scope
+#  steps:
+#  - intent: nlu_fallback
+#  - action: utter_out_of_scope
 
 # - rule: first_time_customer
 #   steps:
