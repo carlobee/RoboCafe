@@ -11,7 +11,8 @@ First run ngrok on http 5005:
 ngrok http 5005
 ```
 
-Then change the following lines in Furhat SDK [interaction.kt](https://github.com/carlobee/RoboCafe/blob/NLU/furhat/Skill/src/main/kotlin/furhatos/app/skill/flow/interaction.kt) file with your ngrok url:
+Then change the following lines in Furhat SDK [interaction.kt](https://github.com/carlobee/RoboCafe/blob/NLU/furhat/Skill/src/main/kotlin/furhatos/app/skill/flow/interaction.kt) file with your ngrok url (in the picture):
+![ngrok_url](https://github.com/carlobee/RoboCafe/blob/main/docs/ngrok_url.png?raw=true)
 ```java
 val RASA_URL = "\'http://<ngrok_url>/webhooks/myio/webhook\'"
 ```
