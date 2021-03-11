@@ -2,6 +2,7 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 #########################################
 # intents
 #########################################
@@ -17,7 +18,7 @@ intents:
 - bot_challenge
 - new_user
 - confused
-- nlu_fallback
+#- nlu_fallback
 entities:
 - size
 #########################################
@@ -50,6 +51,7 @@ responses:
 
   utter_greet:
   - text: Hello.
+#    channel: myio
   utter_introduction:
   - text: I am Furhat. I can provide assistance in making a coffee.
 
@@ -146,14 +148,14 @@ forms:
     - entity: size
       type: from_entity
 
+# custom actions to pre fill slots (e.g. "I want a large coffee")
+
 #---------------- Experienced user path -------------------#
 
   experienced_user_form:
     size:
     - entity: size
       type: from_entity 
-
-
 
 
 #########################################

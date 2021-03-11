@@ -1,0 +1,25 @@
+15:41:11 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+15:41:11 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+15:41:22 [SkillSkill] ERROR TriggerRunner: 33 - Error
+org.json.JSONException: Expected a ',' or '}' at 137 [character 138 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:505)
+	at org.json.JSONObject.<init>(JSONObject.java:263)
+	at org.json.JSONTokener.nextValue(JSONTokener.java:431)
+	at org.json.JSONArray.<init>(JSONArray.java:124)
+	at org.json.JSONTokener.nextValue(JSONTokener.java:434)
+	at org.json.JSONObject.<init>(JSONObject.java:244)
+	at org.json.JSONTokener.nextValue(JSONTokener.java:431)
+	at org.json.JSONObject.<init>(JSONObject.java:244)
+	at org.json.JSONObject.<init>(JSONObject.java:357)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$4.invoke(interaction.kt:34)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$4.invoke(interaction.kt)
+	at furhatos.flow.kotlin.TriggerRunner.run(TriggerRunner.kt:31)
+	at furhatos.flow.kotlin.Runner.runTrigger(Runner.kt:204)
+	at furhatos.flow.kotlin.Runner.runTrigger$default(Runner.kt:176)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:57)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.skill.SkillSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)

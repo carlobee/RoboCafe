@@ -1,0 +1,6 @@
+19:11:17 [Skill] INFO  Skill:139 - Connecting to Furhat server on 100.88.20.87:1932
+19:11:17 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+19:12:03 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 9862 ms since last event poll
+19:12:37 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 9399 ms since last event poll
+19:12:48 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 8131 ms since last event poll
+19:13:59 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 8162 ms since last event poll

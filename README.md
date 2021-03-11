@@ -2,6 +2,40 @@
 
 This repo contains the Rasa bot used in the RoboCafe project for the F21CA module.
 
+## Running the bot
+
+You need to run Furhat SDK, ngrok, and Rasa in order to run the bot.
+
+First run ngrok on http 5005:
+```bash
+ngrok http 5005
+```
+
+Then change the following lines in Furhat SDK [interaction.kt](https://github.com/carlobee/RoboCafe/blob/NLU/furhat/Skill/src/main/kotlin/furhatos/app/skill/flow/interaction.kt) file with your ngrok url:
+```java
+val RASA_URL = "\'http://<ngrok_url>/webhooks/myio/webhook\'"
+```
+
+Then build the Furhat skill.
+
+After, run Rasa and Rasa actions server with these two commands from within the RoboCafe directory on different terminal windows:
+```bash
+rasa run
+```
+
+```bash
+rasa run actions
+```
+
+**Note that every time you run ngrok you will get a new url, so you will have to build and update the Furhat Skill**
+
+## Building Furhat skills
+
+In order to run the bot you need to have the [Furhat SDK](https://furhatrobotics.com/furhat-sdk/).  
+The Furhat SDK uses skills to run that need to built in order for them to run.  
+Check out the [docs](https://docs.furhat.io/gen1/skills/) and [this video](https://www.youtube.com/watch?v=McaRHpw5Wvk) for more details on how to build a skill.
+
+
 ## Rasa and Rasa X Installation
 In order to run the Rasa bot we encourage you to use the Alana [Anaconda](https://www.anaconda.com/) environment found in this repo.   
 You can do this by running the alana_installation.sh in the Anaconda prompt (on Windows) or terminal (MacOS / Unix) or by using the terminal in pycharm. Once created activate it with conda activate Alana, you will see (Alana) at the left of your prompt.
@@ -64,7 +98,7 @@ Now open your [Telegram](https://web.telegram.org/) app and add the user @robot_
 
 ## Development
 
-**When pushing changes don't push to main branch. Create your own branch or push to the branch for your team (e.g. 
+**When pushing changes don't push to main branch. Create your own branch or push to the branch for your team (e.g.
 RASA).**
 
 **Pull requests will be reviewed by the whole team before merging with the master branch**

@@ -96,3 +96,7 @@ nlu:
     - [big](size)
     - [little](size)
     - [long](size)
+    - i would like a [short](size) coffee
+    - i would like a [long](size) coffee
+    - make me a [short](size) coffee
+    - make me a [long](size) coffee

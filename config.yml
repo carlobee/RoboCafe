@@ -17,16 +17,16 @@ pipeline:
    - name: DIETClassifier
      epochs: 100
      constrain_similarities: true
-     model_confidence: cosine
+     model_confidence: softmax
    - name: EntitySynonymMapper
    - name: ResponseSelector
      epochs: 100
      constrain_similarities: true
-     model_confidence: cosine
+     model_confidence: softmax
    - name: FallbackClassifier
      threshold: 0.8
      ambiguity_threshold: 0.1
-    
+
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:

@@ -1,0 +1,8 @@
+20:31:30 [Skill] INFO  Skill:139 - Connecting to Furhat server on 100.88.20.87:1932
+20:31:32 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+20:34:31 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1317 ms since last event poll
+20:34:40 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1191 ms since last event poll
+20:35:39 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 36853 ms since last event poll
+20:36:02 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3929 ms since last event poll
+20:36:10 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 4957 ms since last event poll
+20:39:24 [Broker Client] ERROR BrokerClient:152 - Unexpected disconnect from broker
