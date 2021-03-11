@@ -62,15 +62,16 @@ class MyIO(InputChannel):
             # last_bot = request_data.get("current_state.state.last_bot")
 
             # include exception handling
-            sender_id = request.json.get(MyIO.ALANA_REQUEST_USER_ID_FIELD)
+            request_data = request.load_json()
+            sender_id = request_data.get("current_state").get("user_id")
+            # sender_id = request.json.get(MyIO.ALANA_REQUEST_USER_ID_FIELD)
             input_channel = self.name()  # method to fetch input channel
             metadata = self.get_metadata(request)
             collector = CollectingOutputChannel() # collects the response messages from rasa
             # text = request.json.get(MyIO.ALANA_REQUEST_TEXT_FIELD) or ''
-            request_data = request.load_json()
             text = request_data.get("current_state").get("state").get("nlu").get("processed_text")
             last_bot = request.json.get(MyIO.ALANA_REQUEST_LAST_BOT_FIELD)
-            self.logger.info("Text received from Alana: " + text)
+            self.logger.info("Text received from Alana: " + text + " " + sender_id)
             # include exception handling
             await on_new_message(
                 UserMessage(
