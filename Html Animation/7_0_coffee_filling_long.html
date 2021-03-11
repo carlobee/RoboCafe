@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="coffee.css">
+<title>Coffee Machine</title>
+		<script type = "text/javascript">
+          function displayNextImage() {
+			  if (x >= 4) {
+				document.getElementById("enjoy_button").hidden = false;
+			  } else {
+				x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+			  }
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 1500);
+          }
+
+          var images = [], x = -1;
+          images[0] = "Imgs/coffee_filling_1.png";
+          images[1] = "Imgs/coffee_filling_2.png";
+			images[2] = "Imgs/coffee_filling_3.png";
+			images[3] = "Imgs/coffee_filling_4.png";
+			images[4] = "Imgs/coffee_filling_5.png";
+      </script>
+</head>
+
+<body onload = "startTimer()">
+	<div class="main_div">
+		<div class="anim_div">
+	    <img src="Imgs/coffee_filling_0.png" height="100%" alt="" id="img" class="anim_img"/> 
+		</div>
+		
+		<div class="buttons_div">
+	  <a hidden="true" id="enjoy_button" href="./1_0_low_water.html"><button class="button">Enjoy a cup of coffee</button></a>
+			</div>
+</div>
+</body>
+</html>
