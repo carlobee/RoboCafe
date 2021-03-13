@@ -1,0 +1,65 @@
+15:31:15 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+15:31:15 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+15:31:29 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2147 ms since last event poll
+15:31:40 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1821 ms since last event poll
+15:31:47 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2114 ms since last event poll
+15:32:00 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3869 ms since last event poll
+15:32:13 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2408 ms since last event poll
+15:32:26 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2403 ms since last event poll
+15:32:39 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1950 ms since last event poll
+15:32:53 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3415 ms since last event poll
+15:33:10 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1893 ms since last event poll
+15:33:29 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2007 ms since last event poll
+15:33:51 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2012 ms since last event poll
+15:34:39 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 3341 ms since last event poll
+15:49:01 [ErrorLoggingThread] ERROR SkillSkill:459 - Exception in thread "SkillSkill" java.lang.NoClassDefFoundError: kotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.iterator(ConsPStack.java:71)
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.get(ConsPStack.java:55)
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.minus(ConsPStack.java:114)
+	at kotlin.reflect.jvm.internal.pcollections.HashPMap.plus(HashPMap.java:66)
+	at kotlin.reflect.jvm.internal.KClassCacheKt.getOrCreateKotlinClass(kClassCache.kt:63)
+	at kotlin.reflect.jvm.internal.ReflectionFactoryImpl.getOrCreateKotlinClass(ReflectionFactoryImpl.java:50)
+	at kotlin.jvm.internal.Reflection.getOrCreateKotlinClass(Reflection.java:54)
+	at furhatos.flow.kotlin.ImplementationsKt$Listen$1.invoke(implementations.kt:267)
+	at furhatos.flow.kotlin.ImplementationsKt$Listen$1.invoke(implementations.kt)
+	at furhatos.flow.kotlin.State.makeState$furhat_commons(State.kt:100)
+	at furhatos.flow.kotlin.StateRunner.<init>(StateRunner.kt:19)
+	at furhatos.flow.kotlin.FlowControlRunner.tailRecRunCall(FlowControlRunner.kt:86)
+	at furhatos.flow.kotlin.FlowControlRunner.call(FlowControlRunner.kt:61)
+	at furhatos.flow.kotlin.FlowControlRunner.call$default(FlowControlRunner.kt:55)
+	at furhatos.flow.kotlin.Furhat.listen(Furhat.kt:195)
+	at furhatos.flow.kotlin.Furhat.listen$default(Furhat.kt:192)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$1.invoke(interaction.kt:13)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.skill.SkillSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: kotlin.reflect.jvm.internal.pcollections.ConsPStack$Itr
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 26 more
+Exception in thread "Thread-Attention" java.lang.NoClassDefFoundError: kotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.iterator(ConsPStack.java:71)
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.get(ConsPStack.java:55)
+	at kotlin.reflect.jvm.internal.pcollections.ConsPStack.minus(ConsPStack.java:114)
+	at kotlin.reflect.jvm.internal.pcollections.HashPMap.plus(HashPMap.java:66)
+	at kotlin.reflect.jvm.internal.KClassCacheKt.getOrCreateKotlinClass(kClassCache.kt:63)
+	at kotlin.reflect.jvm.internal.ReflectionFactoryImpl.getOrCreateKotlinClass(ReflectionFactoryImpl.java:50)
+	at kotlin.jvm.internal.Reflection.getOrCreateKotlinClass(Reflection.java:54)
+	at furhatos.autobehavior.AttentionKt$AttendingUser$1.invoke(Attention.kt:180)
+	at furhatos.autobehavior.AttentionKt$AttendingUser$1.invoke(Attention.kt)
+	at furhatos.flow.kotlin.State.makeState$furhat_commons(State.kt:100)
+	at furhatos.flow.kotlin.StateRunner.<init>(StateRunner.kt:19)
+	at furhatos.flow.kotlin.StateRunner.<init>(StateRunner.kt:18)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:145)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.flow.kotlin.Flow$runAsync$thread$1.run(Flow.kt:136)
+	at java.lang.Thread.run(Thread.java:748)
+

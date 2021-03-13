@@ -91,7 +91,6 @@ responses:
   utter_dispense_coffee:
   - text: Ok, please wait while I dispense your {size} coffee. Be sure to release the handle again for the next person.
 actions:
-- action_reset_slots
 - utter_dispense_coffee
 - utter_greet
 forms:

@@ -16,7 +16,7 @@ from rasa.core.channels.channel import (
 
 class MyIO(InputChannel):
     logger = logging.getLogger("MY IO")
-    BOT_NAME = "greetings"
+    BOT_NAME = "coffee-bot"
     ALANA_REQUEST_TEXT_FIELD = "current_state.state.nlu.processed_text"
     ALANA_REQUEST_LAST_BOT_FIELD = "current_state.state.last_bot"
     ALANA_REQUEST_USER_ID_FIELD = "current_state.user_id"
