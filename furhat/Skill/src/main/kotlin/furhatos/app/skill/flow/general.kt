@@ -2,6 +2,7 @@ package furhatos.app.skill.flow
 
 import furhatos.flow.kotlin.*
 import furhatos.util.*
+//import furhatos.app.skill.flow.coffee_complete
 
 val Idle: State = state {
 
@@ -40,6 +41,7 @@ val Interaction: State = state {
 
     onUserEnter(instant = true) {
         furhat.glance(it)
+//        coffee_complete = 0
     }
 
 }

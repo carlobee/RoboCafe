@@ -8,13 +8,33 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
     - hey there
-    - let's go
     - hey dude
     - goodmorning
     - goodevening
     - good afternoon
+- intent: return_coffee
+  examples: |
+    - go back to coffee
+    - I would like a coffee
+    - can you make me a coffee?
+    - make me a coffee
+    - go back to coffee
+    - how do I get a coffee
+    - let's get back to talking about coffee
+    - how about my coffee
+    - where were we with my coffee
+    - can we go back to coffee
+    - let's go back to coffee
+    - let us go back to coffee
+    - that's nice can we go back to coffee now
+    - okay but what about my coffee
+    - how do I get back to coffee
+    - okay that's fine but what about my coffee
+    - help me make a coffee
+    - can you help me make a coffee
+    - how do i make a coffee
+    - can you help me make a coffee
 - intent: goodbye
   examples: |
     - good afternoon
@@ -37,6 +57,8 @@ nlu:
     - thanks
     - great thanks
     - thank you
+    - okay thank you
+    - that's great thanks bye
 - intent: affirm
   examples: |
     - yes
@@ -49,6 +71,7 @@ nlu:
     - definitely
     - yup
     - aye
+    # Need to add more
 - intent: deny
   examples: |
     - no
@@ -81,6 +104,7 @@ nlu:
     - what is next
     - next
     - okay
+    # Need to add more
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee
@@ -100,3 +124,11 @@ nlu:
     - i would like a [long](size) coffee
     - make me a [short](size) coffee
     - make me a [long](size) coffee
+    - a [long](size) shot
+    - a [short](size) shot
+    - a [large](size) shot
+    - a [small](size) shot
+    - a [big](size) shot
+    - a [little](size) shot
+    - a [long](size) shot please
+    - a [short](size) shot please

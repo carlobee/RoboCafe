@@ -2,9 +2,13 @@ version: "2.0"
 
 stories:
 
+# Water ok + experienced user stories
+
 - story: water ok + experienced user
   steps:
-    - intent: greet
+    - or:
+      - intent: greet
+      - intent: return_coffee
     - action: utter_greet
     - action: utter_introduction
     - action: water_tank_form
@@ -29,13 +33,122 @@ stories:
       - size: long  # user wants a long coffee
     - active_loop: null
     - action: utter_dispense_coffee
-    - action: action_reset_slots
     - intent: goodbye
     - action: utter_goodbye
+    - action: action_restart
+
+- story: water ok + experienced user 2
+  steps:
+    - or:
+        - intent: greet
+        - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - intent: return_coffee
+    - action: utter_ask_water_tank
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # water is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # user is familiar with machine
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long  # user wants a long coffee
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water ok + experienced user 3
+  steps:
+    - or:
+        - intent: greet
+        - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # water is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - intent: return_coffee
+    - action: utter_ask_choose_user
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # user is familiar with machine
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long  # user wants a long coffee
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water ok + experienced user 4
+  steps:
+    - or:
+        - intent: greet
+        - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form  # water form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # water is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form # user form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # user is familiar with machine
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form # experienced user form
+    - intent: return_coffee
+    - action: utter_ask_size
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long  # user wants a long coffee
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+# Water low + experienced user stories
 
 - story: water low + experienced user
   steps:
-    - intent: greet
+    - or:
+      - intent: greet
+      - intent: return_coffee
     - action: utter_greet
     - action: utter_introduction
     - action: water_tank_form
@@ -67,10 +180,179 @@ stories:
       - size: long
     - active_loop: null
     - action: utter_dispense_coffee
-    - action: action_reset_slots
     - intent: goodbye
     - action: utter_goodbye
+    - action: action_restart
 
+- story: water low + experienced user 2
+  steps:
+    - or:
+      - intent: greet
+      - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - intent: return_coffee
+    - action: utter_ask_water_tank
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: false # Water tank is not above the line
+    - active_loop: null
+    - action: fill_water_form
+    - active_loop: fill_water_form
+    - slot_was_set:
+      - requested_slot: fill_water
+    - slot_was_set:
+      - fill_water: true  # Water tank has been filled
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # User is experienced
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water low + experienced user 3
+  steps:
+    - or:
+      - intent: greet
+      - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: false # Water tank is not above the line
+    - active_loop: null
+    - action: fill_water_form
+    - active_loop: fill_water_form
+    - intent: return_coffee
+    - action: utter_ask_fill_water
+    - slot_was_set:
+      - requested_slot: fill_water
+    - slot_was_set:
+      - fill_water: true  # Water tank has been filled
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # User is experienced
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water low + experienced user 4
+  steps:
+    - or:
+      - intent: greet
+      - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: false # Water tank is not above the line
+    - active_loop: null
+    - action: fill_water_form
+    - active_loop: fill_water_form
+    - slot_was_set:
+      - requested_slot: fill_water
+    - slot_was_set:
+      - fill_water: true  # Water tank has been filled
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - intent: return_coffee
+    - action: utter_ask_choose_user
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # User is experienced
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water low + experienced user 5
+  steps:
+    - or:
+      - intent: greet
+      - intent: return_coffee
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: false # Water tank is not above the line
+    - active_loop: null
+    - action: fill_water_form
+    - active_loop: fill_water_form
+    - slot_was_set:
+      - requested_slot: fill_water
+    - slot_was_set:
+      - fill_water: true  # Water tank has been filled
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: true # User is experienced
+    - active_loop: null
+    - action: experienced_user_form
+    - active_loop: experienced_user_form
+    - intent: return_coffee
+    - action: utter_ask_size
+    - slot_was_set:
+      - requested_slot: size
+    - slot_was_set:
+      - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+# Water ok + non-experienced user stories
 
 - story: water OK + non-experienced user
   steps:
@@ -107,28 +389,23 @@ stories:
         - size: long
     - active_loop: null
     - action: utter_dispense_coffee
-    - action: action_reset_slots
     - intent: goodbye
     - action: utter_goodbye
+    - action: action_restart
 
-- story: water low + non-experienced user
+- story: water OK + non-experienced user 2
   steps:
     - intent: greet
     - action: utter_greet
     - action: utter_introduction
     - action: water_tank_form
     - active_loop: water_tank_form
+    - intent: return_coffee
+    - action: utter_ask_water_tank
     - slot_was_set:
       - requested_slot: water_tank
     - slot_was_set:
-      - water_tank: false # Water tank is not filled
-    - active_loop: null
-    - action: fill_water_form
-    - active_loop: fill_water_form
-    - slot_was_set:
-      - requested_slot: fill_water
-    - slot_was_set:
-      - fill_water: true  # Water has been filled
+      - water_tank: true  # Water tank is above the level
     - active_loop: null
     - action: choose_user_form
     - active_loop: choose_user_form
@@ -153,6 +430,170 @@ stories:
         - size: long
     - active_loop: null
     - action: utter_dispense_coffee
-    - action: action_reset_slots
     - intent: goodbye
     - action: utter_goodbye
+    - action: action_restart
+
+- story: water OK + non-experienced user 3
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # Water tank is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - intent: return_coffee
+    - action: utter_ask_choose_user
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: false  # User is not familiar with the machine
+    - active_loop: null
+    - action: first_time_form
+    - active_loop: first_time_form
+    - slot_was_set:
+      - requested_slot: insert_capsule
+    - slot_was_set:
+      - insert_capsule: true
+    - slot_was_set:
+      - requested_slot: cup
+    - slot_was_set:
+      - cup: true
+    - slot_was_set:
+        - requested_slot: size
+    - slot_was_set:
+        - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water OK + non-experienced user 4
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # Water tank is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: false  # User is not familiar with the machine
+    - active_loop: null
+    - action: first_time_form
+    - active_loop: first_time_form
+    - intent: return_coffee
+    - action: utter_ask_insert_capsule
+    - slot_was_set:
+      - requested_slot: insert_capsule
+    - slot_was_set:
+      - insert_capsule: true
+    - slot_was_set:
+      - requested_slot: cup
+    - slot_was_set:
+      - cup: true
+    - slot_was_set:
+        - requested_slot: size
+    - slot_was_set:
+        - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water OK + non-experienced user 5
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # Water tank is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: false  # User is not familiar with the machine
+    - active_loop: null
+    - action: first_time_form
+    - active_loop: first_time_form
+    - slot_was_set:
+      - requested_slot: insert_capsule
+    - slot_was_set:
+      - insert_capsule: true
+    - intent: return_coffee
+    - action: utter_ask_cup
+    - slot_was_set:
+      - requested_slot: cup
+    - slot_was_set:
+      - cup: true
+    - slot_was_set:
+        - requested_slot: size
+    - slot_was_set:
+        - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: water OK + non-experienced user
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_introduction
+    - action: water_tank_form
+    - active_loop: water_tank_form
+    - slot_was_set:
+      - requested_slot: water_tank
+    - slot_was_set:
+      - water_tank: true  # Water tank is above the level
+    - active_loop: null
+    - action: choose_user_form
+    - active_loop: choose_user_form
+    - slot_was_set:
+      - requested_slot: choose_user
+    - slot_was_set:
+      - choose_user: false  # User is not familiar with the machine
+    - active_loop: null
+    - action: first_time_form
+    - active_loop: first_time_form
+    - slot_was_set:
+      - requested_slot: insert_capsule
+    - slot_was_set:
+      - insert_capsule: true
+    - slot_was_set:
+      - requested_slot: cup
+    - slot_was_set:
+      - cup: true
+    - intent: return_coffee
+    - action: utter_ask_size
+    - slot_was_set:
+        - requested_slot: size
+    - slot_was_set:
+        - size: long
+    - active_loop: null
+    - action: utter_dispense_coffee
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
