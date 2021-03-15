@@ -1,0 +1,28 @@
+18:11:27 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+18:11:28 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+18:11:28 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:11:41 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:11:41 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2115 ms since last event poll
+18:11:53 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:11:53 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1882 ms since last event poll
+18:12:01 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:12:01 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2164 ms since last event poll
+18:20:27 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:20:37 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:20:37 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2053 ms since last event poll
+18:20:47 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:20:47 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1878 ms since last event poll
+18:20:57 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:20:57 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2844 ms since last event poll
+18:21:10 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:21:10 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 5645 ms since last event poll
+18:21:17 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:21:17 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1763 ms since last event poll
+18:21:26 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:21:26 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 1547 ms since last event poll
+18:21:41 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:21:41 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2760 ms since last event poll
+18:21:52 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:21:52 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 5862 ms since last event poll
+18:22:00 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+18:22:00 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 2209 ms since last event poll
