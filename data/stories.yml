@@ -39,6 +39,7 @@ stories:
     - slot_was_set:
       - size: [long, short]  # user wants a long coffee
     - active_loop: null
+#    - action: ActionAppendFile # this needs fixed !
     - action: utter_dispense_coffee
     - intent: goodbye
     - action: utter_goodbye

@@ -13,6 +13,17 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - Hi furhat
+    - hello furhat
+    - hey furhat
+    - morning
+    - evening
+    - furhat
+    - hey there
+    - hi there
+    - good morning furhat
+    - good evening furhat
+    - good afternoon furhat
 - intent: return_coffee
   examples: |
     - go back to coffee
@@ -47,8 +58,8 @@ nlu:
     - just make me a coffee
     - I just want a coffee
     - I only want a coffee
-    - just make the fucking coffee
     - actually I would just like a coffee
+    - what is happening with my coffee
 - intent: goodbye
   examples: |
     - good afternoon
@@ -127,6 +138,11 @@ nlu:
     - what is next
     - next
     - okay
+    - what's next
+    - I've done that
+    - OK next
+    - what do I do next
+    - what do I do now
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee
@@ -163,3 +179,8 @@ nlu:
     - what other things can you do
     - how can you help
     - what other things
+    - what can you talk about
+    - what can you say
+    - such as
+    - what else can you talk about
+    - give me examples
