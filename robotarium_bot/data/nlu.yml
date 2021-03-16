@@ -10,6 +10,7 @@ nlu:
     - i want a room
     - I'm looking for a room
     - i would like a room
+    - what rooms are available
 
 - intent: events
   examples: |
