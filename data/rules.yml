@@ -7,7 +7,7 @@ rules:
 #    - intent: request_examples
 #    - action: utter_list_examples
 #
-#- rule: give guidane when user is confused
+#- rule: give guidance when user is confused
 #  steps:
 #    - intent: confused
 #    - action: utter_help

@@ -1,0 +1,23 @@
+version: "2.0"
+
+intents:
+  - rooms
+  - events
+  - facts
+
+responses:
+
+  utter_rooms:
+  - text: The following rooms are free. G10, G11, G12.
+  - text: The following rooms are free. G2, G4, G5, G9.
+  - text: Sorry all rooms are currently in use.
+  - text: There is only one room currently available. G6.
+
+  utter_events:
+  - text: There is a TED talk about Alana on today.
+  - text: There is an international conference on today.
+  - text: There is always events going on at the robotarium.
+
+  utter_facts:
+  - text: Did you know that the National Robotarium leverages existing research and the expertise of UK industry with the significant market opportunity of robotics and autonomous systems.
+  - text: Did you know that the National Robotarium is a world-leading research and development facility.
