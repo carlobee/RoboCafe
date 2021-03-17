@@ -14,10 +14,13 @@ nlu:
 
 - intent: events
   examples: |
+    - event
+    - events
     - what events are on
     - what events are on today
     - what's on today
     - what's on
+    - what is on
     - what is on at the moment
     - what's on at the moment
     - anything happening today?

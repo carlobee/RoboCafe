@@ -39,7 +39,8 @@ val Start : State = state(Interaction) {
         val ROBOTARIUM_URL = "\'http://dc6a4bcf672a.ngrok.io/webhooks/myio/webhook\'"
         var alana_data = " "
         if (task_switch == 0) {
-            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}, {'robotarium-bot':" + ROBOTARIUM_URL + "}, 'fact_bot', 'ontology_bot', 'reddit_bot', 'news_bot_v2', 'weather_bot', 'evi'], 'PRIORITY_BOTS':['coffee-bot', ['robotarium-bot', 'fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']]}}"
+//            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}, {'robotarium-bot':" + ROBOTARIUM_URL + "}, 'fact_bot', 'ontology_bot', 'reddit_bot', 'news_bot_v2', 'weather_bot', 'evi'], 'PRIORITY_BOTS':['coffee-bot', ['robotarium-bot', 'fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']]}}"
+            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}, 'fact_bot', 'ontology_bot', 'reddit_bot', 'news_bot_v2', 'weather_bot', 'evi'], 'PRIORITY_BOTS':['coffee-bot', ['fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']]}}"
         } else if (task_switch == 1) {
             alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}], 'PRIORITY_BOTS':['coffee-bot']}}"
         }
