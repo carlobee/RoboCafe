@@ -99,7 +99,6 @@ class MyIO(InputChannel):
             if not rasa_response or not rasa_response.count:
                 alana_response.result = ''
             else:
-                alana_response.lock_requested = True
                 overall_message = ''
                 for message in rasa_response:
                     # print(message.get("text"))
