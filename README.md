@@ -19,13 +19,9 @@ val RASA_URL = "\'http://<ngrok_url>/webhooks/myio/webhook\'"
 
 Then build the Furhat skill.
 
-After, run Rasa and Rasa actions server with these two commands from within the RoboCafe directory on different terminal windows:
+After, run Rasa using this command from within the RoboCafe directory on different terminal windows:
 ```bash
 rasa run
-```
-
-```bash
-rasa run actions
 ```
 
 **Note that every time you run ngrok you will get a new url, so you will have to build and update the Furhat Skill**
