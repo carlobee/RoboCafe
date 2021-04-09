@@ -1,0 +1,40 @@
+version: "2.0"
+
+nlu:
+- intent: rooms
+  examples: |
+    - what rooms are free today
+    - what rooms are free right now
+    - what rooms are free
+    - book me a room
+    - i want a room
+    - I'm looking for a room
+    - i would like a room
+    - what rooms are available
+
+- intent: events
+  examples: |
+    - event
+    - events
+    - what events are on
+    - what events are on today
+    - what's on today
+    - what's on
+    - what is on
+    - what is on at the moment
+    - what's on at the moment
+    - anything happening today?
+    - what's happening today?
+    - plan activities
+
+- intent: facts
+  examples: |
+    - tell me about this building
+    - tell me about the robotarium
+    - I want to know about the robotarium
+    - give me a fact about the robotarium
+    - can you tell me about this building
+    - give me some information about this building
+    - give me some information about the robotarium
+    - I would like to know about this building
+    - I would like to know about the robotarium

@@ -69,7 +69,7 @@ class MyIO(InputChannel):
             metadata = self.get_metadata(request)
             collector = CollectingOutputChannel() # collects the response messages from rasa
             # text = request.json.get(MyIO.ALANA_REQUEST_TEXT_FIELD) or ''
-            text = request_data.get("current_state").get("state").get("nlu").get("processed_text")
+            text = request_data.get("current_state").get("state").get("input").get("text")
             last_bot = request.json.get(MyIO.ALANA_REQUEST_LAST_BOT_FIELD)
             self.logger.info("Text received from Alana: " + text + " " + sender_id)
             # include exception handling
@@ -86,9 +86,7 @@ class MyIO(InputChannel):
                 bot_name=MyIO.BOT_NAME,
                 rasa_response=collector.messages
             )
-            self.logger.info("Response sent back to alana: " +
-                             json.dumps(alana_response.toJSON())
-                             )
+            self.logger.info("Response sent back to alana: " + json.dumps(alana_response.toJSON()))
             return response.json([alana_response.toJSON()])
 
         def convert_rasa_response_to_alana_response(bot_name: str, rasa_response: list) -> abstract_classes.Response:
@@ -101,6 +99,7 @@ class MyIO(InputChannel):
             if not rasa_response or not rasa_response.count:
                 alana_response.result = ''
             else:
+                alana_response.lock_requested = True
                 overall_message = ''
                 for message in rasa_response:
                     # print(message.get("text"))

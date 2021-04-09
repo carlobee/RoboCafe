@@ -1,0 +1,5 @@
+17:21:43 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+17:21:44 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+17:21:48 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+17:22:00 [SkillSkill] WARN  Joey:149 - Unsupported pitch value for Amazon Polly.
+17:22:00 [SkillSkill] WARN  Flow: 93 - Flow unknown unresponsive, 4149 ms since last event poll

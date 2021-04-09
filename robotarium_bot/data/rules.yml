@@ -1,0 +1,18 @@
+version: "2.0"
+
+rules:
+
+- rule: tell me about rooms
+  steps:
+  - intent: rooms
+  - action: utter_rooms
+
+- rule: tell me about events
+  steps:
+  - intent: events
+  - action: utter_events
+
+- rule: tell me about facts
+  steps:
+  - intent: facts
+  - action: utter_facts

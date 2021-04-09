@@ -2,6 +2,16 @@ version: "2.0"
 
 rules:
 
+#- rule: when user asks for examples give some examples
+#  steps:
+#    - intent: request_examples
+#    - action: utter_list_examples
+#
+#- rule: give guidance when user is confused
+#  steps:
+#    - intent: confused
+#    - action: utter_help
+
 #- rule: Say hi anytime the user says hi
 #  steps:
 #  - intent: greet

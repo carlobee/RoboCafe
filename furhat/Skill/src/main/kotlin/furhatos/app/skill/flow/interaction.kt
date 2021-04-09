@@ -3,41 +3,54 @@ package furhatos.app.skill.flow
 import furhatos.nlu.common.*
 import furhatos.flow.kotlin.*
 import furhatos.nlu.Intent
-//import furhatos.app.skill.nlu.*
 import org.json.JSONObject
+//import furhatos.util.Gender.*
+import furhatos.util.*
+import furhatos.flow.kotlin.voice.Voice
+import furhatos.gestures.Gestures
 
-public var coffee_complete = 1
+//public var coffee_complete = 1
+
+val myVoice = Voice(gender = Gender.MALE, language = Language.ENGLISH_US, pitch = "medium", rate = 1.2)
+
+val task_switch = 0
 
 val Start : State = state(Interaction) {
     onEntry {
-        furhat.say("Hello. I am Furhat. I can give you assistance on making coffee or just talk about a number of things like the weather or give you a random fact.")
+        furhat.voice = myVoice
+        if (task_switch == 0) {
+            furhat.say("Hello. I am Furhat. I can give you assistance on making coffee or a number of other things.")
+        } else if (task_switch == 1) {
+            furhat.say("Hello. I am Furhat. I can give you assistance on making coffee.")
+        }
         with(furhat) { listen() }
-//        coffee_complete = 0
     }
     onEvent("sense.user.silence"){
         with(furhat) { listen() }
+        furhat.gesture(Gestures.BigSmile(duration = 2.0))
     }
     onEvent("sense.user.speak**"){
         with(furhat) {listen() }
+        furhat.gesture(Gestures.BigSmile(duration = 2.0))
     }
     onResponse { response ->
-//        System.out.println(response.text)
-//        System.out.println(response.userId)
         val ALANA_URL = "http://52.56.181.83:5000"
-        val RASA_URL = "\'http://bc28f1c2b66d.ngrok.io/webhooks/myio/webhook\'"
-        val COMPLETE_STRING = "Be sure to release the handle again for the next person."
-//        var alana_data = " "
-        var alana_data = "{'user_id': " + response.userId + ", 'question': " +  response.text + ", 'session_id': '03.UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':['profanity_bot', 'fact_bot', 'ontology_bot', 'reddit_bot', 'evi', 'news_bot_v2', 'weather_bot', {'coffee-bot':" + RASA_URL + "}], 'PRIORITY_BOTS':['coffee-bot', 'profanity_bot', 'fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']}}"
-//        if (coffee_complete > 0) {
-//            alana_data = "{'user_id': " + response.userId + ", 'question': " +  response.text + ", 'session_id': '03.UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':['fact_bot', 'news_bot_v2', 'weather_bot', {'greetings':" + RASA_URL + "}], 'PRIORITY_BOTS':['greetings', 'weather_bot', 'fact_bot', 'news_bot_v2']}}"
-//        } else {
-//            alana_data = "{'user_id': " + response.userId + ", 'question': " +  response.text + ", 'session_id': '03.UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'greetings':" + RASA_URL + "}], 'PRIORITY_BOTS':['greetings']}}"
-//        }
+        val RASA_URL = "\'http://2266f366979b.ngrok.io/webhooks/myio/webhook\'"
+        val ROBOTARIUM_URL = "\'http://6ae1e400fb47.ngrok.io/webhooks/myio/webhook\'"
+        var alana_data = " "
+        if (task_switch == 0) {
+            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}, {'robotarium-bot':" + ROBOTARIUM_URL + "}, 'fact_bot', 'ontology_bot', 'reddit_bot', 'news_bot_v2', 'weather_bot', 'evi'], 'PRIORITY_BOTS':['coffee-bot', 'robotarium-bot', ['fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']]}}"
+//            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}, 'fact_bot', 'ontology_bot', 'reddit_bot', 'news_bot_v2', 'weather_bot', 'evi'], 'PRIORITY_BOTS':['coffee-bot', ['fact_bot', 'weather_bot', 'news_bot_v2', 'onotology_bot', 'reddit_bot', 'wiki_bot_mongo', 'evi']]}}"
+        } else if (task_switch == 1) {
+            alana_data = "{'user_id': " + response.userId + ", 'question': " + response.text + ", 'session_id': '" + response.userId + ".UUID4', 'projectId': 'CA2020', 'overrides': {'BOT_LIST':[{'coffee-bot':" + RASA_URL + "}], 'PRIORITY_BOTS':['coffee-bot']}}"
+        }
         val response = khttp.post(ALANA_URL, data= JSONObject(alana_data)).text
-//        if(JSONObject(response).getString("result").endsWith(COMPLETE_STRING)) {
-//            coffee_complete++
-//        }
-        furhat.say(JSONObject(response).getString("result"))
+        var result_string = JSONObject(response).getString("result")
+        if (result_string.contains("OK please wait while I dispense your", ignoreCase = true)) {
+            furhat.gesture(Gestures.Nod)
+        }
+        furhat.voice = myVoice
+        furhat.say(result_string)
         with(furhat) { listen() }
     }
 }

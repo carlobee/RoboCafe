@@ -1,99 +1,119 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+#########################################
+# intents
+#########################################
 intents:
-- goodbye:
-    use_entities: true
-- coffee_size:
-    use_entities: true
-- greet:
-    use_entities: true
-- affirm:
-    use_entities: true
-- complete:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- new_user:
-    use_entities: true
-- confused:
-    use_entities: true
+- goodbye
+- coffee_size
+- greet
+- affirm
+- complete
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- new_user
+- confused
+- return_coffee
+- request_examples
+
 entities:
 - size
+
+#########################################
+# slots
+#########################################
 slots:
   water_tank:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
   insert_capsule:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
   cup:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
   size:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
   fill_water:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
   choose_user:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: true
-  requested_slot:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
+
+#########################################
+# responses
+#########################################
 responses:
+
   utter_greet:
-  - text: Hello.
+  - text: Great.
+
   utter_introduction:
-  - text: I am Furhat. I can provide assistance in making a coffee.
+  - text: Let's get started making a coffee. Firstly
+
   utter_goodbye:
-  - text: Bye.
-  - text: Bye Bye.
-  - text: Goodbye.
+  - text: Bye
+  - text: Bye Bye
+  - text: Goodbye
+
+  utter_back_to_coffee:
+  - text: Let's see what's the next step.
+  - text: Okay next thing to check.
+  - text: Yup sure for the next step.
+  - text: No problem, I am now returning to the coffee process.
+  - text: Yup let's return to the coffee making. Next
+  - text: Right away, let's get you a coffee. But first
+
+  utter_list_examples:
+  - text: I have many functions try asking me for a random fact or asking me about the weather or even asking about the news.
+
+  utter_help:
+  - text: If you would like to go to the coffee making process say "I would like a coffee".
+
   utter_out_of_scope:
-  - text: Sorry, I don't understand what you said.
+  - text: Sorry, I don't understand what you said
+  - text: I didn't quite catch that, could you repeat it?
+
   utter_ask_water_tank:
-  - text: Is the water tank level above the red line?
+  - text: Is the water tank level above the line?
+
   utter_ask_fill_water:
-  - text: Fill up the water above the red line.
+  - text: Fill up the water above the line
+
   utter_ask_choose_user:
   - text: Are you familiar with how to use this coffee machine?
+
   utter_ask_insert_capsule:
-  - text: Place your capsule in the opening on the machine and pull the handle down.
+  - text: Place your capsule in the top of the machine and pull the handle down.
+
   utter_ask_cup:
-  - text: Please make to place a cup under the spout.
+  - text: Please make sure that you have place a cup under the spout.
+
   utter_ask_size:
-  - text: The two available sizes of coffee are short and long. Please tell me which one you would like.
+  - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
+
   utter_dispense_coffee:
-  - text: Ok, please wait while I dispense your {size} coffee. Be sure to release the handle again for the next person.
+  - text: OK please wait while I dispense your {size} coffee.
+#  - text: OK please wait while I dispense your {size} coffee. While you wait ask me about the weather or ask me to tell you a random fact.
+
+#########################################
+# actions
+#########################################
 actions:
 - utter_dispense_coffee
 - utter_greet
+
 forms:
+
+#---------------- Ask about water level -------------------#
+
   water_tank_form:
     water_tank:
     - intent: affirm
@@ -102,6 +122,9 @@ forms:
     - intent: deny
       type: from_intent
       value: false
+
+#---------------- If water level low, fill -------------------#
+
   fill_water_form:
     fill_water:
     - intent: affirm
@@ -110,6 +133,9 @@ forms:
     - intent: complete
       type: from_intent
       value: true
+
+#---------------- Ask experience level of user -------------------#
+
   choose_user_form:
     choose_user:
     - intent: affirm
@@ -118,14 +144,10 @@ forms:
     - intent: deny
       type: from_intent
       value: false
+
+#---------------- Non-experienced user path -------------------#
+
   first_time_form:
-    cup:
-    - intent: complete
-      type: from_intent
-      value: true
-    - intent: affirm
-      type: from_intent
-      value: true
     insert_capsule:
     - intent: complete
       type: from_intent
@@ -133,11 +155,38 @@ forms:
     - intent: affirm
       type: from_intent
       value: true
+    cup:
+    - intent: complete
+      type: from_intent
+      value: true
+    - intent: affirm
+      type: from_intent
+      value: true
     size:
     - entity: size
       type: from_entity
+
+# custom actions to pre fill slots (e.g. "I want a large coffee")
+
+#---------------- Experienced user path -------------------#
+
   experienced_user_form:
     size:
     - entity: size
       type: from_entity
+
+
+#########################################
+# e2e action
+#########################################
 e2e_actions: []
+
+
+# to do
+#
+# 1. --- DONE --- fix no option with water tank - just add new action
+# 2. --- DONE --- .py file clear slots AND entities for long and short upon new person using machine
+# 3. --- DONE --- create new form for experienced user
+# 4. --- DONE --- create new manager form for story selection
+# 5. detect divergence?? (alana should do this for chit chat bot, else - just ask question again (we do this already))
+# 6. TRAIN!!!!!

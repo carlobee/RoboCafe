@@ -13,6 +13,17 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - Hi furhat
+    - hello furhat
+    - hey furhat
+    - morning
+    - evening
+    - furhat
+    - hey there
+    - hi there
+    - good morning furhat
+    - good evening furhat
+    - good afternoon furhat
 - intent: return_coffee
   examples: |
     - go back to coffee
@@ -35,6 +46,17 @@ nlu:
     - can you help me make a coffee
     - how do i make a coffee
     - can you help me make a coffee
+    - can you make me a coffee
+    - I would like a coffee please
+    - can you make coffee
+    - coffee please
+    - coffee now
+    - actually I would like a coffee
+    - just make me a coffee
+    - I just want a coffee
+    - I only want a coffee
+    - actually I would just like a coffee
+    - what is happening with my coffee
 - intent: goodbye
   examples: |
     - good afternoon
@@ -71,7 +93,9 @@ nlu:
     - definitely
     - yup
     - aye
-    # Need to add more
+    - Yes we shall get started making a coffee
+    - uh huh
+    - yep
 - intent: deny
   examples: |
     - no
@@ -91,6 +115,13 @@ nlu:
     - I need help
     - help
     - I don't know what to do
+    - I'm stuck
+    - I'm not sure what to do
+    - what should I say
+    - what happens next
+    - how can you help
+    - I don't know what I am doing
+    - I don't know
 - intent: complete
   examples: |
     - complete
@@ -104,7 +135,11 @@ nlu:
     - what is next
     - next
     - okay
-    # Need to add more
+    - what's next
+    - I've done that
+    - OK next
+    - what do I do next
+    - what do I do now
 - intent: coffee_size
   examples: |
     - i want a [long](size) coffee
@@ -132,3 +167,17 @@ nlu:
     - a [little](size) shot
     - a [long](size) shot please
     - a [short](size) shot please
+- intent: request_examples
+  examples: |
+    - what can you do
+    - like what
+    - give me some examples of the things you can do
+    - what things
+    - what other things can you do
+    - how can you help
+    - what other things
+    - what can you talk about
+    - what can you say
+    - such as
+    - what else can you talk about
+    - give me examples

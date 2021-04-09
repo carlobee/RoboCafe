@@ -1,0 +1,28 @@
+16:02:58 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.125:1932
+16:02:58 [SkillSkill] INFO  SkillSkill:166 - Starting skill
+16:03:10 [ErrorLoggingThread] ERROR SkillSkill:459 - Exception in thread "SkillSkill" java.lang.OutOfMemoryError
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$4.invoke(interaction.kt:36)
+	at furhatos.app.skill.flow.InteractionKt$Start$1$4.invoke(interaction.kt)
+	at furhatos.flow.kotlin.TriggerRunner.run(TriggerRunner.kt:31)
+	at furhatos.flow.kotlin.Runner.runTrigger(Runner.kt:204)
+	at furhatos.flow.kotlin.Runner.runTrigger$default(Runner.kt:176)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:57)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.skill.SkillSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+
