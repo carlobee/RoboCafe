@@ -97,10 +97,11 @@ responses:
   - text: Please make sure that you have place a cup under the spout.
 
   utter_ask_size:
-    - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
+  - text: There are two sizes of coffee available, a long or a short shot. Please tell me which one you would like.
 
   utter_dispense_coffee:
-  - text: OK please wait while I dispense your {size} coffee. While you wait ask me about the weather or ask me to tell you a random fact.
+  - text: OK please wait while I dispense your {size} coffee.
+#  - text: OK please wait while I dispense your {size} coffee. While you wait ask me about the weather or ask me to tell you a random fact.
 
 #########################################
 # actions
