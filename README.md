@@ -1,6 +1,6 @@
-# F21CA: RoboCafe (Group 3)
+RoboCafe
 
-This repo contains the Rasa bot used in the RoboCafe project for the F21CA module.
+A chatbot built in RASA to sit beside a coffee machine and assist users in making their beverages!
 
 ## Running the bot
 
